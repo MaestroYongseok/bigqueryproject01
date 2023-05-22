@@ -15,7 +15,7 @@ client = bigquery.Client(credentials=credentials)
 @st.cache_data(ttl=600)
 def run_query(cols, name):
     st.write("Load DataFrame")
-    sql = f"SELECT {cols} FROM streamlit-dashboard-369600.seoul.{name}"
+    sql = f"SELECT {cols} FROM bigqueryproject01-387503.seoul.{name}"
     df = client.query(sql).to_dataframe()
 
     st.dataframe(df)
