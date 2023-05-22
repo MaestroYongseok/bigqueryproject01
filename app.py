@@ -32,6 +32,8 @@ def main():
         group by table_name
         """
 
+
+
         df = client.query(sql).to_dataframe()
         all_cols = df.values[0][0].split(",")
         columns = st.multiselect("컬럼명 선택", all_cols, default=all_cols)
